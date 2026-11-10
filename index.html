@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#160d24">
+<title>Para Rafa 💜</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #160d24;
+    --bg2: #211332;
+    --purple: #bd8cff;
+    --light: #e6d2ff;
+    --white: #fff9ff;
+    --muted: #c3b1d1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(155, 92, 220, .17), transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(109, 55, 160, .18), transparent 35%);
+    z-index: -1;
+}
+
+section {
+    min-height: 100vh;
+    padding: 90px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 22px;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(55px, 11vw, 105px);
+    line-height: .95;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(38px, 7vw, 65px);
+    margin-bottom: 25px;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.highlight {
+    color: var(--light);
+}
+
+.purple {
+    color: var(--purple);
+}
+
+.hero {
+    background:
+        linear-gradient(rgba(22,13,36,.35), rgba(22,13,36,.85)),
+        radial-gradient(ellipse at center, #563276 0%, #211332 50%, #160d24 100%);
+}
+
+.hero-content {
+    animation: appear 1.5s ease both;
+}
+
+.hero h1 span {
+    color: var(--purple);
+    font-style: italic;
+}
+
+.hero-subtitle {
+    max-width: 530px;
+    margin: 0 auto 35px;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 3px;
+    animation: float 2s infinite;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #c99aff, #8c53c4);
+    color: #1a1025;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 8px 30px rgba(177, 119, 235, .2);
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(177, 119, 235, .35);
+}
+
+.music-button {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 50;
+    background: rgba(44, 27, 61, .85);
+    border: 1px solid rgba(210, 174, 255, .3);
+    color: var(--light);
+    padding: 11px 16px;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.story {
+    background: linear-gradient(180deg, var(--bg), #211332);
+}
+
+.story-text {
+    max-width: 650px;
+    margin: auto;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 700px;
+    margin: 45px auto 0;
+}
+
+.photo {
+    height: 380px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(213, 174, 255, .25);
+    box-shadow: 0 15px 45px rgba(0,0,0,.25);
+    transition: .5s;
+}
+
+.photo:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.photo:nth-child(2):hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.counter-section {
+    background: #211332;
+}
+
+.counter-box {
+    padding: 45px 25px;
+    border: 1px solid rgba(205, 165, 255, .25);
+    border-radius: 25px;
+    background: rgba(255,255,255,.035);
+    max-width: 720px;
+    margin: auto;
+    box-shadow: 0 20px 70px rgba(0,0,0,.2);
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.counter-item {
+    padding: 18px 5px;
+    border-radius: 15px;
+    background: rgba(180, 125, 235, .1);
+}
+
+.counter-number {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 7vw, 55px);
+    color: var(--light);
+}
+
+.counter-label {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.letter-section {
+    background: linear-gradient(180deg, #211332, #180f26);
+}
+
+.letter {
+    max-width: 720px;
+    margin: auto;
+    padding: clamp(25px, 6vw, 55px);
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(207, 173, 255, .2);
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 20px 70px rgba(0,0,0,.2);
+}
+
+.letter p {
+    margin-bottom: 19px;
+    font-size: 14px;
+}
+
+.signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: var(--light);
+    margin-top: 30px;
+    line-height: 1.5;
+}
+
+.quote-section {
+    background: #180f26;
+}
+
+.quote {
+    max-width: 750px;
+    margin: auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 6vw, 52px);
+    line-height: 1.35;
+    color: var(--light);
+}
+
+.quote-mark {
+    font-size: 80px;
+    color: var(--purple);
+    line-height: .5;
+}
+
+.question-section {
+    background: linear-gradient(180deg, #180f26, #281638);
+    overflow: hidden;
+}
+
+.question {
+    font-size: clamp(40px, 8vw, 75px);
+    color: var(--light);
+}
+
+.question-text {
+    max-width: 530px;
+    margin: 0 auto 35px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    min-height: 75px;
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #d6b1ff, #a56be0);
+}
+
+.no-button {
+    background: #392a49;
+    color: #e9d9f7;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: none;
+    touch-action: none;
+}
+
+.final-section {
+    background:
+        radial-gradient(ellipse at center, #573278, #211332 60%, #160d24);
+}
+
+.final-content {
+    animation: appear 1.5s ease both;
+}
+
+.final-title {
+    font-size: clamp(55px, 10vw, 100px);
+    color: var(--light);
+}
+
+.final-text {
+    max-width: 570px;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: #120a1d;
+    color: #9e87b2;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #c99aff;
+    pointer-events: none;
+    z-index: 100;
+    animation: heartFloat linear forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: .8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 80px 20px;
+    }
+
+    .photos {
+        gap: 12px;
+    }
+
+    .photo {
+        height: 250px;
+    }
+
+    .counter {
+        gap: 7px;
+    }
+
+    .counter-item {
+        padding: 15px 3px;
+    }
+
+    .counter-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .letter {
+        padding: 25px 20px;
+    }
+
+    .letter p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 340px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="backgroundMusic" loop>
+    <source src="./assets/see-you-again.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicButton" onclick="toggleMusic()">
+    ♫ Tocar nossa música
+</button>
+
+<section class="hero" id="inicio">
+    <div class="container hero-content">
+        <div class="eyebrow">uma surpresa para alguém especial</div>
+        <h1>Para você,<br><span>Rafa.</span></h1>
+        <p class="hero-subtitle">
+            Algumas pessoas chegam à nossa vida e fazem tudo ficar mais bonito.
+            Você é exatamente assim para mim.
+        </p>
+        <a href="#historia" class="button">Comece por aqui 💜</a>
+    </div>
+    <div class="scroll-hint">ROLE PARA DESCOBRIR ↓</div>
+</section>
+
+<section class="story" id="historia">
+    <div class="container">
+        <div class="eyebrow">sobre nós</div>
+        <h2>Você é <span class="purple">especial.</span></h2>
+
+        <p class="story-text">
+            Rafa, você é uma das melhores partes da minha vida.
+            Seu carinho, seu jeito e até os pequenos detalhes fazem
+            meus dias serem muito mais felizes. Ter você comigo é
+            uma das coisas mais especiais que a vida poderia me dar.
+            E, se existe uma coisa que eu quero, é continuar construindo
+            nossa história ao seu lado.
+        </p>
+
+        <div class="photos">
+            <div class="photo">
+                <img src="./assets/WhatsApp Image 2026-11-10 at 12.34.24 (1).png" alt="Uma lembrança nossa">
+            </div>
+            <div class="photo">
+                <img src="./assets/WhatsApp Image 2026-11-10 at 12.34.24.png" alt="Mais uma lembrança nossa">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="counter-section" id="tempo">
+    <div class="container">
+        <div class="eyebrow">cada segundo importa</div>
+        <h2>Nosso tempo <span class="purple">juntos.</span></h2>
+
+        <div class="counter-box">
+            <p>Desde aquele dia, cada momento com você tem um lugar especial na minha memória.</p>
+
+            <div class="counter">
+                <div class="counter-item">
+                    <span class="counter-number" id="days">0</span>
+                    <span class="counter-label">Dias</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="hours">00</span>
+                    <span class="counter-label">Horas</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="minutes">00</span>
+                    <span class="counter-label">Minutos</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="seconds">00</span>
+                    <span class="counter-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="letter-section" id="carta">
+    <div class="container">
+        <div class="eyebrow">uma coisa que quero te dizer</div>
+        <h2>De coração, <span class="purple">para você.</span></h2>
+
+        <div class="letter">
+            <p>Rafa, meu amor,</p>
+
+            <p>Hoje eu estava aqui pensando em nós e senti uma vontade imensa de te dizer o quanto você é importante para mim.</p>
+
+            <p>Eu te amo demais, muito além do que qualquer palavra consiga explicar. Você mudou a minha vida e trouxe uma paz que eu nunca achei que encontraria em alguém.</p>
+
+            <p>Quero que você saiba que o meu amor por você não tem pressa, não tem barreiras e não tem limites.</p>
+
+            <p>Se a vida nos colocasse à prova e fosse necessário, eu esperaria anos por você sem hesitar um segundo. O tempo não é nada comparado à certeza que tenho de que quero você ao meu lado.</p>
+
+            <p>Meu coração é seu, hoje, amanhã e pelo tempo que for preciso.</p>
+
+            <p>Obrigado por ser minha namorada, por existir, por cuidar de mim e por fazer meus dias muito mais felizes.</p>
+
+            <p>Quero viver muitos momentos com você, colecionar lembranças, realizar sonhos e continuar escolhendo você todos os dias.</p>
+
+            <p>Você é meu amor, minha felicidade e uma das pessoas mais especiais da minha vida.</p>
+
+            <p><span class="highlight">Eu amo você mais do que imagina.</span></p>
+
+            <div class="signature">
+                Com todo meu amor,<br>
+                Jonathan 💜
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quote-section">
+    <div class="container">
+        <div class="quote-mark">“</div>
+        <p class="quote">
+            Entre tantas pessoas no mundo, meu coração encontrou você.
+            E todos os dias eu tenho ainda mais certeza de que amo você.
+        </p>
+        <div class="quote-mark">”</div>
+    </div>
+</section>
+
+<section class="question-section" id="pergunta">
+    <div class="container">
+        <div class="eyebrow">só mais uma coisinha...</div>
+        <h2 class="question">Você sabe o quanto é amada?</h2>
+
+        <p class="question-text">
+            Espero que nunca faltem motivos para você se sentir especial.
+            Se eu pudesse escolher novamente, escolheria você.
+            Hoje, amanhã e em todos os dias que vierem.
+        </p>
+
+        <div class="buttons">
+            <button class="button yes-button" onclick="showLove()">
+                Sei sim, meu amor 💜
+            </button>
+
+            <button class="button no-button" id="noButton">
+                Não 💔
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="final-section" id="final">
+    <div class="container final-content">
+        <div class="eyebrow">e nunca se esqueça disso</div>
+        <h2 class="final-title">Eu escolho você.</h2>
+
+        <p class="final-text">
+            Obrigado por ser minha namorada e por fazer parte da minha vida.
+            Quero continuar vivendo momentos incríveis com você, realizando
+            sonhos, criando lembranças e construindo nossa história.
+            <br><br>
+            Eu amo você, Rafa. Hoje e sempre. 💜
+        </p>
+    </div>
+</section>
+
+<footer>
+    FEITO COM AMOR POR JONATHAN 💜
+</footer>
+
+<script>
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play().then(() => {
+            musicButton.textContent = "♫ Pausar música";
+        }).catch(() => {
+            musicButton.textContent = "♫ Tente tocar novamente";
+        });
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ Tocar nossa música";
+    }
+}
+
+// CONTADOR
+const startDate = new Date(2026, 0, 21, 19, 0, 0).getTime();
+
+function updateCounter() {
+    const now = new Date().getTime();
+    const difference = Math.max(0, now - startDate);
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+}
+
+updateCounter();
+setInterval(updateCounter, 1000);
+
+// BOTÃO NÃO FUGITIVO
+const noButton = document.getElementById("noButton");
+
+function moveNoButton() {
+    const padding = 15;
+    const maxX = Math.max(padding, window.innerWidth - noButton.offsetWidth - padding);
+    const maxY = Math.max(padding, window.innerHeight - noButton.offsetHeight - padding);
+
+    noButton.style.position = "fixed";
+    noButton.style.left = (padding + Math.random() * (maxX - padding)) + "px";
+    noButton.style.top = (padding + Math.random() * (maxY - padding)) + "px";
+    noButton.style.zIndex = "999";
+}
+
+noButton.addEventListener("mouseenter", moveNoButton);
+noButton.addEventListener("touchstart", function(event) {
+    event.preventDefault();
+    moveNoButton();
+}, { passive: false });
+
+noButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    moveNoButton();
+});
+
+// RESPOSTA POSITIVA
+function showLove() {
+    document.getElementById("final").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    for (let i = 0; i < 35; i++) {
+        setTimeout(createHeart, i * 90);
+    }
+}
+
+// CHUVA DE CORAÇÕES
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = Math.random() > 0.5 ? "💜" : "♡";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (14 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(() => {
+    if (Math.random() > 0.45) createHeart();
+}, 1200);
+</script>
+
+</body>
+</html>
